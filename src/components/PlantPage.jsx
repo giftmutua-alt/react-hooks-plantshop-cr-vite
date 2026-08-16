@@ -1,16 +1,14 @@
 import React from "react";
-import NewPlantForm from "./NewPlantForm";
-import PlantList from "./PlantList";
-import Search from "./Search";
 
-function PlantPage() {
+function PlantPage({ plant }) {
   return (
-    <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
-    </main>
+    <div>
+      <h2>{plant.name}</h2>
+      <p>Price: ${plant.price}</p>
+    </div>
   );
 }
 
 export default PlantPage;
+
+

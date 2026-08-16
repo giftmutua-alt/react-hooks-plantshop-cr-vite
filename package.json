@@ -5,14 +5,13 @@
   "private": true,
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "json-server": "^1.0.0-beta.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "scripts": {
     "dev": "vite",
     "server": "json-server db.json -p 6001",
-    "test": "vitest"
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": [
@@ -33,12 +32,31 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.5.2",
+    "babel-jest": "^30.4.1",
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1",
     "jsdom": "^26.0.0",
-    "node-fetch": "^3.3.2",
-    "vite": "^6.1.0",
-    "vitest": "^3.0.5"
+    "json-server": "^1.0.0-beta.15",
+    "vite": "^6.1.0"
+  },
+"jest": {
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/src/setup.js"],
+  "transform": {
+    "^.+\\.[tj]sx?$": "babel-jest"
+  }
+},
+
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   }
 }

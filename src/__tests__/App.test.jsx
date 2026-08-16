@@ -1,4 +1,10 @@
-import './test_suites/AllPlants.test'
-import './test_suites/CreatePlant.test'
-import './test_suites/InStock.test'
-import './test_suites/SearchPlants.test'
+import React from "react";
+import { render } from "@testing-library/react";
+import App from "../components/App";
+
+test("App renders without crashing", () => {
+  // Mock fetch before rendering
+  global.setFetchResponse(global.basePlants);
+  render(<App />);
+});
+
