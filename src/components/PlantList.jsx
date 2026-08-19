@@ -17,3 +17,4 @@ function PlantList({ plants, onToggleStock }) {
 
 export default PlantList;
 
+

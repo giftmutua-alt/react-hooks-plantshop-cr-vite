@@ -9,15 +9,17 @@ function NewPlantForm({ onAddPlant }) {
     e.preventDefault();
     const newPlant = { name, image, price };
 
-    // Perform POST fetch as test expects
     fetch("http://localhost:6001/plants", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newPlant)
-    });
+      body: JSON.stringify(newPlant),
+    })
+      .then((res) => res.json())
+      .then((plant) => onAddPlant(plant));
 
-    onAddPlant({ ...newPlant, inStock: true });
-    setName(""); setImage(""); setPrice("");
+    setName("");
+    setImage("");
+    setPrice("");
   }
 
   return (
@@ -46,4 +48,7 @@ function NewPlantForm({ onAddPlant }) {
 }
 
 export default NewPlantForm;
+
+
+
 
