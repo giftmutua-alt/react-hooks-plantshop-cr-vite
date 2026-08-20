@@ -18,12 +18,16 @@ global.alternatePlants = [
   { id: 5, name: 'Bamboo', price: 20, image: 'bamboo.jpg', inStock: true }
 ];
 
+// Detect environment: Vitest or Jest
+const mockFn = typeof vi !== "undefined" ? vi.fn : jest.fn;
+
 // Mock fetch response helper
 global.setFetchResponse = (data) => {
-  global.fetch = jest.fn(() =>
+  global.fetch = mockFn(() =>
     Promise.resolve({
       json: () => Promise.resolve(data)
     })
   );
 };
+
 
