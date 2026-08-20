@@ -47,11 +47,12 @@
   },
 "jest": {
   "testEnvironment": "jsdom",
-  "setupFilesAfterEnv": ["<rootDir>/src/__tests__/setup.js"],
+  "setupFilesAfterEnv": ["<rootDir>/src/__tests__/setup.jsx"],
   "transform": {
     "^.+\\.[tj]sx?$": "babel-jest"
   }
 },
+
 
   "babel": {
     "presets": [
