@@ -8,7 +8,7 @@ function App() {
   const [plants, setPlants] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // ✅ GET all plants
+  // ✅ Fetch all plants on page load
   useEffect(() => {
     async function loadPlants() {
       const res = await fetch("http://localhost:6001/plants");
@@ -18,12 +18,12 @@ function App() {
     loadPlants();
   }, []);
 
-  // ✅ POST new plant
+  // ✅ Add new plant
   function handleAddPlant(newPlant) {
     setPlants([...plants, newPlant]);
   }
 
-  // ✅ Toggle stock
+  // ✅ Toggle stock (non-persisting)
   function handleToggleStock(id) {
     setPlants((plants) =>
       plants.map((plant) =>

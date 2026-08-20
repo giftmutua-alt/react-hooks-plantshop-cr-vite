@@ -1,14 +1,14 @@
 import React from "react";
 
-function Search({ searchTerm, onSearch }) {
+function Header() {
   return (
-    <input
-      type="text"
-      placeholder="Type a name to search..."
-      value={searchTerm}
-      onChange={(e) => onSearch(e.target.value)}
-    />
+    <header style={{ textAlign: "center", padding: "20px" }}>
+      <h1>🌿 Plant Shop 🌿</h1>
+      <p>Browse, add, and manage your plants</p>
+    </header>
   );
 }
 
-export default Search;
+export default Header;
+
+
